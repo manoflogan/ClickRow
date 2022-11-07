@@ -18,10 +18,10 @@ class ClickRowRepositoryImpl @Inject constructor(
     private val context: Context
 ): ClickRowRepository {
 
-    override suspend fun fetchClickRows(): Set<ClickRow> = withContext(coroutineDispatchers.io) {
+    override suspend fun fetchClickRows(): List<ClickRow> = withContext(coroutineDispatchers.io) {
         context.assets.open(FILE_NAME).use {
             val jsonAdapter = moshiBuilder.build().adapter(ClickRowHolder::class.java)
-            return@withContext jsonAdapter.fromJson(it.source().buffer())?.clickRows?.toSet() ?: setOf()
+            return@withContext jsonAdapter.fromJson(it.source().buffer())?.clickRows ?: listOf()
         }
     }
 

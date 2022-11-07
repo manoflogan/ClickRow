@@ -14,7 +14,7 @@ class ClickRowViewModel @Inject constructor(
     private val clickRowRepository: ClickRowRepository
 ): ViewModel() {
 
-    private val _clickRowsFlow = MutableStateFlow<Set<ClickRow>>(setOf())
+    private val _clickRowsFlow = MutableStateFlow<List<ClickRow>>(mutableListOf())
     val clickRowsFlow = _clickRowsFlow.asStateFlow()
 
     fun fetchAndInitialiseClickRows() {

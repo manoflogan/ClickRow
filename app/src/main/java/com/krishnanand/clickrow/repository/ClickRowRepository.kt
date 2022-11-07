@@ -7,5 +7,5 @@ import com.krishnanand.clickrow.data.ClickRow
  */
 interface ClickRowRepository {
 
-    suspend fun fetchClickRows(): Set<ClickRow>
+    suspend fun fetchClickRows(): List<ClickRow>
 }
