@@ -1,0 +1,12 @@
+{
+  "clickRows": [
+    {
+      "message": "Coupon code : ABCDE12345",
+      "expiresOn": "Expires on January 30, 2024"
+    },
+    {
+      "message": "Coupon code: BCDEF23456",
+      "expiresOn": "Expires on February 28, 2023"
+    }
+  ]
+}
