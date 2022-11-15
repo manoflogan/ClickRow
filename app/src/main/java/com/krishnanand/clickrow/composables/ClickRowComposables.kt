@@ -81,7 +81,7 @@ fun ClickRowListUi(viewModel: ClickRowViewModel, onClick: (String) -> Unit, modi
         .padding(8.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
-        items(clickRows.toList()) {
+        items(clickRows) {
             ClickRowUi(it, onClick, modifier)
         }
     }
