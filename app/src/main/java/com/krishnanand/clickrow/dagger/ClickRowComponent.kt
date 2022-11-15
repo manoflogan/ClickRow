@@ -2,6 +2,7 @@ package com.krishnanand.clickrow.dagger
 
 import android.app.Application
 import com.krishnanand.clickrow.ClickRowApplication
+import com.krishnanand.clickrow.repository.ClickRowRepository
 import com.krishnanand.clickrow.repository.CoroutineDispatcherModule
 import dagger.BindsInstance
 import dagger.Component
@@ -18,6 +19,8 @@ import javax.inject.Singleton
     ]
 )
 interface ClickRowComponent {
+
+    val clickRowRepository: ClickRowRepository
 
     @Component.Factory
     interface Factory {
