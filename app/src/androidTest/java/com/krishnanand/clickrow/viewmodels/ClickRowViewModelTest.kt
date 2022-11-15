@@ -7,21 +7,15 @@ import com.krishnanand.clickrow.dagger.DaggerClickRowComponent
 import com.krishnanand.clickrow.data.ClickRow
 import com.krishnanand.clickrow.repository.ClickRowRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import kotlinx.coroutines.async
-import kotlinx.coroutines.flow.drop
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.flow.last
 import kotlinx.coroutines.flow.toList
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.UnconfinedTestDispatcher
-import kotlinx.coroutines.test.advanceUntilIdle
 import kotlinx.coroutines.test.runTest
 import org.hamcrest.CoreMatchers
 import org.hamcrest.MatcherAssert
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
-import org.junit.runner.RunWith
 
 @OptIn(ExperimentalCoroutinesApi::class)
 class ClickRowViewModelTest {
@@ -34,9 +28,6 @@ class ClickRowViewModelTest {
 
     @get:Rule
     val instantTaskExecutorRule = InstantTaskExecutorRule()
-
-    @get:Rule
-    val mainDispatcherRule = MainDispatcherRule()
 
     @Before
     fun setUp() {
