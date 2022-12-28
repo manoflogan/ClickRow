@@ -11,7 +11,6 @@ class InjectionViewModelFactory @Inject constructor(
 
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
-        val viewModelProvider = viewModelProviderMap[modelClass] ?: throw IllegalArgumentException("view model class binding not found")
-        return viewModelProvider.get() as T
+        return viewModelProviderMap[modelClass]?.get() as T? ?: throw IllegalArgumentException("view model class binding not found")
     }
 }

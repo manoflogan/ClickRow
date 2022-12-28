@@ -5,6 +5,7 @@ buildscript {
         lifecycle_version = '2.5.1'
         coroutines_version = '1.6.4'
         core_testing = '2.1.0'
+        mockk = '1.13.3'
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

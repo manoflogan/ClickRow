@@ -7,8 +7,6 @@ import com.krishnanand.clickrow.activity.ClickRowActivity
 import com.krishnanand.clickrow.activity.ClickRowActivityModule
 import com.krishnanand.clickrow.repository.ClickRowRepository
 import com.krishnanand.clickrow.repository.ClickRowRepositoryImpl
-import com.krishnanand.clickrow.repository.CoroutineDispatchers
-import com.krishnanand.clickrow.repository.CoroutineDispatchersImpl
 import com.squareup.moshi.Moshi
 import dagger.Binds
 import dagger.Module
