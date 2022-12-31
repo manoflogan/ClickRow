@@ -2,9 +2,8 @@ package com.krishnanand.clickrow.composables
 
 import android.content.Context
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.test.*
 import androidx.compose.ui.test.junit4.createComposeRule
-import androidx.compose.ui.test.onNodeWithText
-import androidx.compose.ui.test.performClick
 import androidx.test.core.app.ApplicationProvider
 import com.krishnanand.clickrow.R
 import com.krishnanand.clickrow.data.ClickRow
@@ -78,6 +77,26 @@ class ClickRowComposablesTest {
             onNodeWithText(EXPIRATION).assertExists().performClick()
         }
         MatcherAssert.assertThat(wasClicked, Matchers.`is`(true))
+        verify {
+            viewModel.clickRowsFlow
+        }
+    }
+
+    @Test
+    fun testClickRowComposables() {
+        every {
+            viewModel.clickRowsFlow
+        } returns MutableStateFlow(listOf(CLICK_ROW))
+        composeRule.setContent {
+            ClickRowTheme {
+                ClickRowComposables(viewModel, Modifier)
+            }
+        }
+        with(composeRule) {
+            onNodeWithText(MESSAGE).assertExists()
+            onNodeWithText(EXPIRATION).assertExists().performClick()
+            onNodeWithTag(hasText(context.getString(R.string.redeem_coupon_accessibility))).assertIsDisplayed()
+        }
         verify {
             viewModel.clickRowsFlow
         }
