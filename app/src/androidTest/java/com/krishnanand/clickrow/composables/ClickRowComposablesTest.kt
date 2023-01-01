@@ -95,7 +95,7 @@ class ClickRowComposablesTest {
         with(composeRule) {
             onNodeWithText(MESSAGE).assertExists()
             onNodeWithText(EXPIRATION).assertExists().performClick()
-            //onNodeWithTag(hasText(context.getString(R.string.redeem_coupon_accessibility))).assertIsDisplayed()
+            onNodeWithText(context.getString(R.string.redeem_coupon_accessibility)).assertIsDisplayed()
         }
         verify {
             viewModel.clickRowsFlow
