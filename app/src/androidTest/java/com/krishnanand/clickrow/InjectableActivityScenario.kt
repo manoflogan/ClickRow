@@ -14,6 +14,7 @@ import androidx.test.runner.lifecycle.ActivityLifecycleMonitorRegistry
 import androidx.test.runner.lifecycle.Stage
 import java.io.Closeable
 
+// Same as Ryan Harter's gist  https://gist.github.com/rharter/5939bb73207aeb6f24c8522ecf4c9d72
 class InjectableActivityScenario<T : Activity>(private val activityClass: Class<T>) : AutoCloseable, Closeable {
 
     private var delegate: ActivityScenario<T>? = null
