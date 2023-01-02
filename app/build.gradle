@@ -91,7 +91,7 @@ dependencies {
 
     testImplementation 'junit:junit:4.13.2'
     testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutines_version"
-    testImplementation "org.robolectric:robolectric:4.4"
+    testImplementation "org.robolectric:robolectric:4.9.2"
     testImplementation "androidx.test:core:1.5.0"
     testImplementation "androidx.arch.core:core-common:$core_testing"
     testImplementation "androidx.arch.core:core-testing:$core_testing"
