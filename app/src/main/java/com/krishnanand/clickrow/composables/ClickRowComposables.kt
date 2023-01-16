@@ -74,7 +74,7 @@ fun ClickRowComposables(viewModel: ClickRowViewModel, modifier: Modifier = Modif
 
 @Composable
 fun ClickRowListUi(viewModel: ClickRowViewModel, onClick: (String) -> Unit, modifier: Modifier) {
-    val clickRows by viewModel.clickRowsFlow.collectAsState()
+    val clickRows by viewModel.clickRowsFlow.collectAsState(mutableListOf())
     LazyColumn(modifier = modifier
         .fillMaxWidth()
         .wrapContentHeight(align = Alignment.CenterVertically)
